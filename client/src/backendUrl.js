@@ -1,3 +1,3 @@
-const backendUrl = 'https://to-view-list.herokuapp.com';
+const backendUrl = "http://localhost:3005";
 
 export default backendUrl;

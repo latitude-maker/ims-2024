@@ -155,7 +155,7 @@ const NavBar = () => {
               <div className={classes.logoWrapper}>
                 <Typography variant="h6" className={classes.logo}>
                   <ListAltRoundedIcon className={classes.logoIcon} />
-                  ToViewList
+                  IMS
                 </Typography>
                 <Typography variant="caption" className={classes.madeBy}>
                   Made with <FavoriteIcon style={{ fontSize: 11 }} /> by{' '}
@@ -165,7 +165,7 @@ const NavBar = () => {
                     target="_blank"
                     rel="noopener"
                   >
-                    amand33p
+                    MBS,LLC
                   </Link>
                 </Typography>
               </div>
