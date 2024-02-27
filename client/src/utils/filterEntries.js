@@ -5,6 +5,14 @@ const filterEntries = (filterObj, entriesArray) => {
     return entriesArray;
   }
 
+  if (filterObj.websites) {
+    filteredArray.push(
+      ...entriesArray.filter(
+        (e) => e.type === 'website' && !filteredArray.includes(e)
+      )
+    );
+  }
+
   if (filterObj.videos) {
     filteredArray.push(
       ...entriesArray.filter(

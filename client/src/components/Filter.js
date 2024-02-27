@@ -15,6 +15,7 @@ import RotateLeftIcon from '@material-ui/icons/RotateLeft';
 const Filter = () => {
   const [, dispatch] = useEntryContext();
   const [filter, setFilter] = useState({
+    websites: false,
     videos: false,
     articles: false,
     others: false,
@@ -22,7 +23,7 @@ const Filter = () => {
     starred: false,
   });
   const classes = useFilterStyles();
-  const { videos, articles, others, viewed, starred } = filter;
+  const { websites, videos, articles, others, viewed, starred } = filter;
 
   const handleCheckboxChange = (event) => {
     setFilter({ ...filter, [event.target.name]: event.target.checked });
@@ -39,6 +40,7 @@ const Filter = () => {
 
   const handleUncheck = () => {
     setFilter({
+      websites: false,
       videos: false,
       articles: false,
       others: false,
@@ -51,6 +53,16 @@ const Filter = () => {
   return (
     <form className={classes.root} onSubmit={handleApplyFilter}>
       <FormGroup row className={classes.checkboxGroup}>
+        <FormControlLabel
+          control={
+            <Checkbox
+              checked={websites}
+              onChange={handleCheckboxChange}
+              name="websites"
+            />
+          }
+          label="Websites"
+        />
         <FormControlLabel
           control={
             <Checkbox

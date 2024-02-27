@@ -38,7 +38,7 @@ const initialInputValues = {
   title: '',
   link: '',
   description: '',
-  type: 'article',
+  type: 'website',
   tags: [],
 };
 
@@ -128,7 +128,7 @@ const AddUpdateForm = () => {
         errRes?.error.includes('title') &&
         errRes?.error.includes('allowed length (40)')
       ) {
-        return setError(`Title field's maximum character limit is 40. `);
+        return setError(`Title field's maximum character limit is 100. `);
       } else if (
         errRes?.error.includes('description') &&
         errRes?.error.includes('allowed length (250)')
@@ -235,6 +235,12 @@ const AddUpdateForm = () => {
             className={classes.radioGroup}
           >
             <FormControlLabel
+              label="Website"
+              control={<Radio color="secondary" />}
+              value="website"
+              checked={type === 'website'}
+            />
+            <FormControlLabel
               label="Article"
               control={<Radio color="secondary" />}
               value="article"
@@ -277,8 +283,8 @@ const AddUpdateForm = () => {
                 ? 'Updating Entry'
                 : 'Update Entry'
               : isLoading
-              ? 'Adding Entry'
-              : 'Add Entry'}
+                ? 'Adding Entry'
+                : 'Add Entry'}
           </Button>
         </div>
         {error && (

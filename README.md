@@ -86,3 +86,6 @@ cd server
 npm install
 npm run dev
 ```
+dev account
+email : master@expo.com
+pw: 123456
